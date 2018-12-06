@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class SchnellesSortierenTest {
-	int _key = 1;
+	int _key = 3;
 	
 	/**
 	 * Teste das Schnellsort-Verfahren
@@ -61,6 +61,30 @@ class SchnellesSortierenTest {
 		System.out.println("Zeit QuickSort: " + average/10);
 	}
 
+//	@Test
+//	public void testeInsertionSort()
+//	{
+//		long average = 0;
+//		SchnellesSortieren quick = new SchnellesSortieren();
+//		int[] arr = erzeugeArray(_key);
+//		for(int k =0;k< 10;++k) {
+//			long time = System.nanoTime();
+//			quick.insertionSort(arr, 0, arr.length-1);
+//			average += (System.nanoTime() - time);
+//			boolean test = false;
+//			for(int i = 0; i < arr.length -1;++i) {
+//				if(arr[i]<=arr[i+1]) {
+//					test = true;
+//				}
+//				else {
+//					test = false;
+//					break;
+//				}
+//			}
+//			assertEquals(true,test);
+//		}
+//		System.out.println("Zeit InsertionSort: " + average/10);
+//	}
 	private int[] erzeugeArray(int k) {
 		int[] arr = new int[(int) Math.pow(10, k)];
 		int n = arr.length;

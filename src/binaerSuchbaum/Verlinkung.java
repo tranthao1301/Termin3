@@ -12,8 +12,8 @@ public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 	private Node<T> _wurzel;
 	
 	/**
-	 * Fügt die generischen Daten in den Verlinkungsbaum ein
-	 * @param	element		Das hinzufügende Element
+	 * Fï¿½gt die generischen Daten in den Verlinkungsbaum ein
+	 * @param	element		Das hinzufï¿½gende Element
 	 */
 	@Override
 	public void insert(T element) {
@@ -29,9 +29,9 @@ public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 	}
 	
 	/**
-	 * Fügt die generischen Daten am gewünschten Platz ein
-	 * @param element	Das hinzufügende Element
-	 * @param node		Der gewünschte Platz
+	 * Fï¿½gt die generischen Daten am gewï¿½nschten Platz ein
+	 * @param element	Das hinzufï¿½gende Element
+	 * @param node		Der gewï¿½nschte Platz
 	 */
 	private void fuegeEin(T element, Node<T> node) 
 	{
@@ -115,19 +115,19 @@ public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 	 */
 	@Override
 	public void inOrder() {
-		inOrder1(_wurzel);
+		inOrder(_wurzel);
 	}
 	
-	private void inOrder1(Node<T> node)
+	private void inOrder(Node<T> node)
 	{
 		if(node.gibLinkenKnoten()!=null)
 		{
-			inOrder1(node.gibLinkenKnoten());
+			inOrder(node.gibLinkenKnoten());
 		}
 		System.out.print(node.gibElement() + " ");
 		if( node.gibRechtenKnoten()!=null)
 		{
-			inOrder1(node.gibRechtenKnoten());
+			inOrder(node.gibRechtenKnoten());
 		}
 	}
 }

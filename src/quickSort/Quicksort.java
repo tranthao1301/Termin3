@@ -18,32 +18,51 @@ public class Quicksort {
 	
 	
     private void sortieren(int[] arr, int links, int rechts) {
-        if (links < rechts) {
-            int pivot = partition(arr, links, rechts);
-            sortieren(arr, links, pivot - 1);
-            sortieren(arr, pivot + 1, rechts);
+    	int i = links, j = rechts;
+        // Get the pivot element from the middle of the list
+        int pivot = arr[links + (rechts - links) / 2];
+
+        // Divide the given elements into two parts
+        while (i <= j) {
+            while (arr[i] < pivot) {
+                i++;
+            }
+            while (arr[j] > pivot) {
+                j--;
+            }
+
+            if (i <= j) {
+                swap(arr, i, j);
+                i++;
+                j--;
+            }
         }
+        // Recursion
+        if (links < j)
+            sortieren(arr, links, j);
+        if (i < rechts)
+            sortieren(arr, i, rechts);
     }
 
     /**
-     * Teilt die Liste in Teilliste, linke Seite kleiner als Pivot und rechte Seite größer als Pivot
+     * Teilt die Liste in Teilliste, linke Seite kleiner als Pivot und rechte Seite grï¿½ï¿½er als Pivot
      * @param arr	Das zu teilende Array
      * @param begin	Der Anfang des Arrays
      * @param end	Das Ende des Arrays
      * @return	Das Index, bei dem sich das Pivot-Element befindet
      */
-    private int partition(int[] arr, int begin, int end) {
-        int pivot = arr[end];
-        int i = begin - 1;
-        for (int j = begin; j < end; j++) {
-            if (arr[j] <= pivot) {
-            	i++;
-                swap(arr, i, j);
-            }
-        }
-        swap(arr, i+1, end);
-        return i+1;
-    }
+//    private int partition(int[] arr, int begin, int end) {
+//        int pivot = arr[end];
+//        int i = begin - 1;
+//        for (int j = begin; j < end; j++) {
+//            if (arr[j] <= pivot) {
+//            	i++;
+//                swap(arr, i, j);
+//            }
+//        }
+//        swap(arr, i+1, end);
+//        return i+1;
+//    }
     
     /**
      * Tauscht zwei Elemente innerhalb des Arrays

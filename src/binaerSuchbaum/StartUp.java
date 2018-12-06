@@ -6,7 +6,7 @@ public class StartUp {
 		Suchbaum<Integer> array = new ArrayEinbettung<Integer>();
 		Suchbaum<Integer> verlinkung = new Verlinkung<Integer>();
 		
-		System.out.println("Bin‰rer Suchbaum:");
+		System.out.println("Bin√§rer Suchbaum:");
 		
 		System.out.println("\nArray Einbettung: ");
 		array.insert(5);

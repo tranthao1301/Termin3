@@ -18,8 +18,8 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 	}
 	
 	/**
-	 * Fügt die generischen Daten in den Arraybaum ein
-	 * @param element Das hinzufügende Element
+	 * Fï¿½gt die generischen Daten in den Arraybaum ein
+	 * @param element Das hinzufï¿½gende Element
 	 * 
 	 */
 	@Override
@@ -36,10 +36,11 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 	}
 	
 	/**
-	 * Fügt die generischen Daten am gewünschten Index des Arraybaums ein
-	 * @param index		Das gewünschte Index
-	 * @param element	Das hinzufügende Element
+	 * Fï¿½gt die generischen Daten am gewï¿½nschten Index des Arraybaums ein
+	 * @param index		Das gewï¿½nschte Index
+	 * @param element	Das hinzufï¿½gende Element
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void fuegeEin(int index, T element) 
 	{
 		if(((Comparable) arrayBaum[index]).compareTo(element)<0)
@@ -71,8 +72,8 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 	}
 	
 	/**
-	 * Vergrößt den Baum an der linken Seite
-	 * @param index		Das nächste Index an der linken Seite
+	 * Vergrï¿½ï¿½t den Baum an der linken Seite
+	 * @param index		Das nï¿½chste Index an der linken Seite
 	 */
 	private void addiereLinks(int index) {
 		if(index*2 >= arrayBaum.length)
@@ -85,8 +86,8 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 	}
 	
 	/**
-	 * Vergrößt den Baum an der rechten Seite
-	 * @param index		Das nächste Index an der rechten Seite
+	 * Vergrï¿½ï¿½t den Baum an der rechten Seite
+	 * @param index		Das nï¿½chste Index an der rechten Seite
 	 */
 	private void addiereRechts(int index) {
 		if(index*2+1 >= arrayBaum.length)

@@ -1,7 +1,7 @@
 package quickSort;
 
 /**
- * Die Klasse modelliert ein Suchverfahren für eine spezielle Aufgabenstellung
+ * Die Klasse modelliert ein Suchverfahren fÃ¼r eine spezielle Aufgabenstellung
  * @author 	Thu Thao Tran
  * 			Paulina Pansow
  *
@@ -18,30 +18,37 @@ public class SchnellesSortieren {
 	}
 	
 	private void sortieren(int[] arr, int links, int rechts) {
-		 int i = links, j = rechts;
-	        // Get the pivot element from the middle of the list
-	        int pivot = arr[links + (rechts - links) / 2];
+		    if (links < rechts){
+            if (rechts-links <= 30){
+                insertionSort(arr, links, rechts); 
+            }
+            else{
+            	int i = links, j = rechts;
+    	        // Get the pivot element from the middle of the list
+    	        int pivot = arr[links + (rechts - links) / 2];
 
-	        // Divide the given elements into two parts
-	        while (i <= j) {
-	            while (arr[i] < pivot) {
-	                i++;
-	            }
-	            while (arr[j] > pivot) {
-	                j--;
-	            }
+    	        // Divide the given elements into two parts
+    	        while (i <= j) {
+    	            while (arr[i] < pivot) {
+    	                i++;
+    	            }
+    	            while (arr[j] > pivot) {
+    	                j--;
+    	            }
 
-	            if (i <= j) {
-	                swap(arr, i, j);
-	                i++;
-	                j--;
-	            }
-	        }
-	        // Recursion
-	        if (links < j)
-	            sortieren(arr, links, j);
-	        if (i < rechts)
-	            sortieren(arr, i, rechts);
+    	            if (i <= j) {
+    	                swap(arr, i, j);
+    	                i++;
+    	                j--;
+    	            }
+    	        }
+    	        // Recursion
+    	        if (links < j)
+    	            sortieren(arr, links, j);
+    	        if (i < rechts)
+    	            sortieren(arr, i, rechts);
+            }
+        }
 		}
 	
 
@@ -58,4 +65,16 @@ public class SchnellesSortieren {
 			arr[b] = temp;
 		}
 	}
+	
+	public void insertionSort(int[] list, int first, int last) {
+        for (int i = first+1; i <= last; i++) { 
+            int currentElement = list[i];
+            int j = i-1;
+            while (j>=0 && list[j]>currentElement) {
+                list[j+1] = list[j];
+                j--;
+            }
+            list[j+1] = currentElement;
+        }
+    }
 }
