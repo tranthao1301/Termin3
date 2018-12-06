@@ -1,6 +1,12 @@
 package binaerSuchbaum;
 
-
+/**
+ * Das Interface modelliert einen Suchbaum
+ * @author	Thu Thao Tran	
+ *			Paulina Pansow
+ *
+ * @param <T>
+ */
 public interface Suchbaum<T> 
 {
 /**

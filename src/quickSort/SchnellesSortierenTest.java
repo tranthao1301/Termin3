@@ -4,8 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class PerformanceVergleich {
+class SchnellesSortierenTest {
 	int _key = 1;
+	
+	/**
+	 * Teste das Schnellsort-Verfahren
+	 */
 	@Test
 	void testSchnellSort() {
 	long average = 0;
@@ -30,6 +34,9 @@ class PerformanceVergleich {
 	System.out.println("Zeit SchnellSort: " + average/10);
 	}
 	
+	/**
+	 * Teste das Quicksort-Verfahren
+	 */
 	@Test
 	public void testeQuickSort() {
 		long average = 0;

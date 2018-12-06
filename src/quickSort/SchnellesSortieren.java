@@ -1,9 +1,17 @@
 package quickSort;
 
+/**
+ * Die Klasse modelliert ein Suchverfahren für eine spezielle Aufgabenstellung
+ * @author 	Thu Thao Tran
+ * 			Paulina Pansow
+ *
+ */
 public class SchnellesSortieren {
-	public SchnellesSortieren() {
-	}
 	
+	/**
+	 * Sortiert von Anfang bis Ende des Arrays
+	 * @param arr	Das zu sortierende Array
+	 */
 	public void sortieren(int[]arr)
 	{
 		sortieren(arr,0,arr.length-1);
@@ -37,6 +45,12 @@ public class SchnellesSortieren {
 		}
 	
 
+	/**
+     * Tauscht zwei Elemente innerhalb des Arrays
+     * @param arr	Das zu sortierende Array
+     * @param a		Das zu tauschende Element
+     * @param b		Das zu tauschende Element
+     */
 	private void swap(int[] arr, int a, int b) {
 		if (a != b) {
 			int temp = arr[a];

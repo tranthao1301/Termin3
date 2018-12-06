@@ -1,9 +1,20 @@
 package binaerSuchbaum;
 
+/**
+ * Die Klasse modelliert einen Suchbaum als Verlinkungsbaum
+ * @author	Thu Thao Tran
+ * 			Paulina Pansow
+ *
+ * @param <T>
+ */
 public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 {
 	private Node<T> _wurzel;
 	
+	/**
+	 * Fügt die generischen Daten in den Verlinkungsbaum ein
+	 * @param	element		Das hinzufügende Element
+	 */
 	@Override
 	public void insert(T element) {
 		if(_wurzel == null)
@@ -16,7 +27,12 @@ public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 		}
 		
 	}
-
+	
+	/**
+	 * Fügt die generischen Daten am gewünschten Platz ein
+	 * @param element	Das hinzufügende Element
+	 * @param node		Der gewünschte Platz
+	 */
 	private void fuegeEin(T element, Node<T> node) 
 	{
 		Node<T> newNode = new Node<T>(element);
@@ -47,7 +63,10 @@ public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 			System.out.println("Node already in tree!");
 		}
 	}
-
+	
+	/**
+	 * Gibt den Baum in Nebenreihenfolge aus (Node - Links - Rechts)
+	 */
 	@Override
 	public void preOrder() {
 		preOrder1(_wurzel);
@@ -56,7 +75,7 @@ public class Verlinkung<T extends Comparable<T>> implements Suchbaum<T>
 	
 	private void preOrder1(Node<T> node)
 	{
-System.out.print(node.gibElement() + " ");
+		System.out.print(node.gibElement() + " ");
 		
 		if(node.gibLinkenKnoten()!=null)
 		{
@@ -69,6 +88,9 @@ System.out.print(node.gibElement() + " ");
 		
 	}
 
+	/**
+	 * Gibt den Baum in Hauptreihenfolge aus (Links - Rechts - Node)
+	 */
 	@Override
 	public void postOrder() {
 		postOrder1(_wurzel);
@@ -87,7 +109,10 @@ System.out.print(node.gibElement() + " ");
 		}
 		System.out.print(node.gibElement() + " ");
 	}
-
+	
+	/**
+	 * Gibt den Baum in symmetrische Reihenfolge aus (Links - Node - Rechts)
+	 */
 	@Override
 	public void inOrder() {
 		inOrder1(_wurzel);

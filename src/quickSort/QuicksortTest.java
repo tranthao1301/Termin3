@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 public class QuicksortTest {
 
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot am Anfang der Liste mit einer randomisierten Liste
+	 */
 	@Test
 	public void testequickSortBeginRandom() {
 		QuicksortBegin qs = new QuicksortBegin();
@@ -13,7 +16,10 @@ public class QuicksortTest {
 		qs.sortieren(array);
 		assertArrayEquals(erg, array);
 	}
-
+	
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot am Anfang der Liste mit einer sortierten Liste (kleinster Schlüssel zuerst)
+	 */
 	@Test
 	public void testequickSortBeginIncrease() {
 		QuicksortBegin qs = new QuicksortBegin();
@@ -23,6 +29,9 @@ public class QuicksortTest {
 		assertArrayEquals(erg, array);
 	}
 
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot am Anfang der Liste mit einer sortierten Liste (größter Schlüssel zuerst)
+	 */
 	@Test
 	public void testequickSortBeginDecrease() {
 		QuicksortBegin qs = new QuicksortBegin();
@@ -32,6 +41,9 @@ public class QuicksortTest {
 		assertArrayEquals(erg, array);
 	}
 
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot am Ende der Liste mit einer randomisierten Liste 
+	 */
 	@Test
 	public void testequickSortEndRandom() {
 		QuicksortEnd qs = new QuicksortEnd();
@@ -41,6 +53,9 @@ public class QuicksortTest {
 		assertArrayEquals(erg, array);
 	}
 
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot am Ende der Liste mit einer sortierten Liste (kleinster Schlüssel zuerst)
+	 */
 	@Test
 	public void testequickSortEndIncrease() {
 		QuicksortEnd qs = new QuicksortEnd();
@@ -49,7 +64,10 @@ public class QuicksortTest {
 		qs.sortieren(array);
 		assertArrayEquals(erg, array);
 	}
-
+	
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot am Ende der Liste mit einer sortierten Liste (größter Schlüssel zuerst)
+	 */
 	@Test
 	public void testequickSortEndDecrease() {
 		QuicksortEnd qs = new QuicksortEnd();
@@ -58,7 +76,9 @@ public class QuicksortTest {
 		qs.sortieren(array);
 		assertArrayEquals(erg, array);
 	}
-	
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot an einer zufälligen Position der Liste mit einer randomisierten Liste 
+	 */
 	@Test
 	public void testequickSortRandomRandom() {
 		QuicksortRandom qs = new QuicksortRandom();
@@ -67,7 +87,10 @@ public class QuicksortTest {
 		qs.sortieren(array);
 		assertArrayEquals(erg, array);
 	}
-
+	
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot an einer zufälligen Position der Liste mit einer sortierten Liste (kleinster Schlüssel zuerst) 
+	 */
 	@Test
 	public void testequickSortRandomIncrease() {
 		QuicksortEnd qs = new QuicksortEnd();
@@ -77,6 +100,9 @@ public class QuicksortTest {
 		assertArrayEquals(erg, array);
 	}
 
+	/**
+	 * Teste das Quicksort-Verfahren mit dem Pivot an einer zufälligen Position der Liste mit einer sortierten Liste (kleinster Schlüssel zuerst) 
+	 */
 	@Test
 	public void testequickSortRandomDecrease() {
 		QuicksortEnd qs = new QuicksortEnd();

@@ -1,5 +1,13 @@
 package binaerSuchbaum;
 
+/**
+ * Diese Klasse modelliert einen Suchbaum als Array-Einbettung
+ * @author Thu Thao Tran
+ * 		   Paulina Pansow
+ *
+ * @param <T>
+ */
+
 public class ArrayEinbettung<T> implements Suchbaum<T> {
 	
 	private Object[] arrayBaum;
@@ -9,6 +17,11 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 		arrayBaum = new Object[10];
 	}
 	
+	/**
+	 * Fügt die generischen Daten in den Arraybaum ein
+	 * @param element Das hinzufügende Element
+	 * 
+	 */
 	@Override
 	public void insert(T element)
 	{
@@ -21,7 +34,12 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 			fuegeEin(1,element);
 		}
 	}
-
+	
+	/**
+	 * Fügt die generischen Daten am gewünschten Index des Arraybaums ein
+	 * @param index		Das gewünschte Index
+	 * @param element	Das hinzufügende Element
+	 */
 	private void fuegeEin(int index, T element) 
 	{
 		if(((Comparable) arrayBaum[index]).compareTo(element)<0)
@@ -51,7 +69,11 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 		}
 		
 	}
-
+	
+	/**
+	 * Vergrößt den Baum an der linken Seite
+	 * @param index		Das nächste Index an der linken Seite
+	 */
 	private void addiereLinks(int index) {
 		if(index*2 >= arrayBaum.length)
 		{
@@ -61,7 +83,11 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 		}
 		
 	}
-
+	
+	/**
+	 * Vergrößt den Baum an der rechten Seite
+	 * @param index		Das nächste Index an der rechten Seite
+	 */
 	private void addiereRechts(int index) {
 		if(index*2+1 >= arrayBaum.length)
 		{
@@ -72,6 +98,10 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 		
 	}
 
+	/**
+	 * Gibt den Baum in Hauptreihenfolge aus
+	 * 
+	 */
 	@Override
 	public void preOrder()
 	{
@@ -91,7 +121,11 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 		}
 		
 	}
-
+	
+	/**
+	 * Gibt den Baum in Nebenreihenfolge aus
+	 * 
+	 */
 	@Override
 	public void postOrder()
 	{
@@ -111,7 +145,11 @@ public class ArrayEinbettung<T> implements Suchbaum<T> {
 		System.out.print(arrayBaum[index]+" ");
 		
 	}
-
+	
+	/**
+	 * Gibt den Baum in symmetrische Reihenfolge aus
+	 * 
+	 */
 	@Override
 	public void inOrder() {
 		inOrder1(1);

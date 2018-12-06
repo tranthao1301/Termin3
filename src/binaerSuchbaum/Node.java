@@ -1,5 +1,12 @@
 package binaerSuchbaum;
 
+/**
+ * Die Klasse modelliert einen Knoten
+ * @author Thu Thao Tran
+ * 		   Paulina Pansow
+ *
+ * @param <T>
+ */
 public class Node<T extends Comparable<T>>{
 	
 		private Node<T> _linkerKnoten;

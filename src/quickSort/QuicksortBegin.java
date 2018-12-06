@@ -1,6 +1,17 @@
 package quickSort;
 
+/**
+ * Die Klasse implementiert das Quicksort-Verfahren, wobei das Pivot-Element am Anfang der Liste ist
+ * @author	Thu Thao Tran
+ * 			Paulina Pansow
+ *
+ */
 public class QuicksortBegin implements PivotStrategie{
+	
+	/**
+	 * Sortiert von Anfang bis Ende des Arrays
+	 * @param arr	Das zu sortierende Array
+	 */
 	 public <T extends Comparable<T>> void sortieren(T[] arr) {
 	    	sortieren(arr, 0, arr.length - 1);
 	    }
@@ -13,7 +24,14 @@ public class QuicksortBegin implements PivotStrategie{
 	            sortieren(arr, pivotIndex + 1, end);
 	        }
 	    }
-
+	    
+	    /**
+	     * Teilt die Liste in Teilliste, linke Seite kleiner als Pivot und rechte Seite größer als Pivot
+	     * @param arr	Das zu teilende Array
+	     * @param begin	Der Anfang des Arrays
+	     * @param end	Das Ende des Arrays
+	     * @return	Das Index, bei dem sich das Pivot-Element befindet
+	     */
 	    private <T extends Comparable<T>> int partition(
 	            T[] arr, int begin, int end) {
 	        T pivot = arr[begin];
@@ -28,6 +46,12 @@ public class QuicksortBegin implements PivotStrategie{
 	        return i-1;
 	    }
 
+	    /**
+	     * Tauscht zwei Elemente innerhalb des Arrays
+	     * @param arr	Das zu sortierende Array
+	     * @param a		Das zu tauschende Element
+	     * @param b		Das zu tauschende Element
+	     */
 	    private <T extends Comparable<T>> void swap(
 	            T[] arr, int a, int b) {
 	        if (a != b) {
