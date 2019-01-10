@@ -85,6 +85,7 @@ class SchnellesSortierenTest {
 //		}
 //		System.out.println("Zeit InsertionSort: " + average/10);
 //	}
+	
 	private int[] erzeugeArray(int k) {
 		int[] arr = new int[(int) Math.pow(10, k)];
 		int n = arr.length;
